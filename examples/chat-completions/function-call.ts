@@ -143,4 +143,7 @@ async function get(id: string) {
   return db.find((item) => item.id === id) ?? null;
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exitCode = 1;
+});
