@@ -20,4 +20,7 @@ async function main() {
   console.dir(await stream.finalChatCompletion(), { depth: null });
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exitCode = 1;
+});
