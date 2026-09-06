@@ -113,4 +113,7 @@ export async function createCompletionParams(
   return params;
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exitCode = 1;
+});
