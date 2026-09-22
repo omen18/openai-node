@@ -49,4 +49,7 @@ async function main() {
   console.log('Run Result' + result);
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exitCode = 1;
+});
