@@ -111,4 +111,7 @@ But Kya is not what they say. A born naturalist with just one day of school, she
   },
 ];
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exitCode = 1;
+});
