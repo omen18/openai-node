@@ -16,7 +16,10 @@ async function main(): Promise<void> {
   await streamingDemoNode();
   await blockingDemo();
 }
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exitCode = 1;
+});
 
 /** Streams synthesized speech directly to a file without buffering the complete response. */
 async function streamingDemoNode(): Promise<void> {
