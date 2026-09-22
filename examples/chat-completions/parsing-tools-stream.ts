@@ -40,4 +40,7 @@ async function main() {
   console.dir(completion, { depth: 10 });
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exitCode = 1;
+});
