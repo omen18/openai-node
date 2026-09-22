@@ -33,7 +33,10 @@ async function main() {
 
 async function run() {
   try {
-    await main();
+    await main().catch((err) => {
+  console.error(err);
+  process.exitCode = 1;
+});
   } catch (error) {
     console.error(error);
     process.exitCode = 1;
