@@ -48,4 +48,7 @@ async function main() {
   console.dir(ui, { depth: 10 });
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exitCode = 1;
+});
